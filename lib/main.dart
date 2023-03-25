@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-import 'home_page.dart';
-
-void main() {
+void main() async {
+  //initialize hive
+  await Hive.initFlutter();
+  //open a box/database
+  await Hive.openBox('Habit_Database');
   runApp(const MyApp());
 }
 
